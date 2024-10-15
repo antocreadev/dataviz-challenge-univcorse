@@ -22,6 +22,7 @@ jobs:
       - name: Send congratulatory GIF to Discord
         if: success()
         run: |
+          echo "Sending message to Discord"
           curl -X POST -H "Content-Type: application/json" \
-          -d '{"content": "📈 Frate, j'ai mit à jour la branch main ! 📈", "embeds": [{"image": {"url": "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"}}]}' \
-          ${{ secrets.DISCORD_WEBHOOK_URL }}
+          -d '{"content": "🐙📈⚡️ Frate j&apos;ai mit à jour la branch main ! ⚡️📈🐙", "embeds": [{"image": {"url": "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"}}]}' \
+          "${{ secrets.DISCORD_WEBHOOK_URL }}"

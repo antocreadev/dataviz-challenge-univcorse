@@ -1,0 +1,58 @@
+version: '3.9'
+
+services:
+  nextjs:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    container_name: nextjs
+    restart: unless-stopped
+    # environment:
+    #   - API_URL=http://web:80
+    ports:
+      - 3000:3000
+    networks:
+      - api-net
+    # depends_on:
+    #   - web
+  
+  # db:
+  #   image: postgres:12
+  #   container_name: db
+  #   restart: unless-stopped
+  #   environment:
+  #     - POSTGRES_USER=${POSTGRES_USER}
+  #     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+  #     - POSTGRES_DB=${POSTGRES_DB}
+  #     - POSTGRES_HOST_AUTH_METHOD=trust
+  #   ports:
+  #     - 5432:5432
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/
+  #   networks:
+  #     - api-net
+      
+  # web:
+  #   build: 
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: web
+  #   restart: unless-stopped
+  #   env_file:
+  #     - ./.env
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - ${DATA_DIR}:${DOCKER_DATA_DIR}
+  #     - ${DATA_DEM}:${DOCKER_DATA_DEM}
+  #   networks:
+  #     - api-net
+  #   depends_on:
+  #     - db
+
+
+networks:
+  api-net:
+
+volumes:
+  postgres_data:

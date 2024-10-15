@@ -1,0 +1,27 @@
+name: Post Congrats on Successful Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Send congratulatory GIF to Discord
+        if: success()
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"content": "📈 Frate, j'ai mit à jour la branch main ! 📈", "embeds": [{"image": {"url": "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"}}]}' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}

@@ -28,11 +28,11 @@ jobs:
           
           curl -X POST -H "Content-Type: application/json" \
           -d "{
-                \"content\": \"🐙📈⚡️ Bravo Frate ! J'ai mis à jour la branch **main** ! 🎉⚡️📈🐙\n\n**Derniers changements :**\n${COMMIT_MESSAGES}\",
+                \"content\": \"🐙📈⚡️ Ao Frate ! J'ai mis à jour la branch **main** ! Va voir c'est toc de bien ! ⚡️📈🐙\n\n**Derniers changements :**\n${COMMIT_MESSAGES}\",
                 \"embeds\": [
                   {
                     \"title\": \"🎈 C'est la fête ! 🎈\",
-                    \"description\": \"Voici un super GIF pour célébrer ! 🥳\",
+                    \"description\": \"Une petite image pour t'encourager à aller voir au fada ! 🥳\",
                     \"image\": {
                       \"url\": \"https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif\"
                     }

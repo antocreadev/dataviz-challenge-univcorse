@@ -27,16 +27,16 @@ jobs:
           COMMIT_MESSAGES=$(git log -1 --pretty=format:'%s')
           
           curl -X POST -H "Content-Type: application/json" \
-          -d '{
-                "content": "🐙📈⚡️ Bravo Frate ! J\'ai mit à jour la branch **main** ! 🎉⚡️📈🐙\n\n**Derniers changements :**\n'"${COMMIT_MESSAGES}"'",
-                "embeds": [
+          -d "{
+                \"content\": \"🐙📈⚡️ Bravo Frate ! J'ai mis à jour la branch **main** ! 🎉⚡️📈🐙\n\n**Derniers changements :**\n${COMMIT_MESSAGES}\",
+                \"embeds\": [
                   {
-                    "title": "🎈 C\'est la fête ! 🎈",
-                    "description": "Voici un super GIF pour célébrer ! 🥳",
-                    "image": {
-                      "url": "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+                    \"title\": \"🎈 C'est la fête ! 🎈\",
+                    \"description\": \"Voici un super GIF pour célébrer ! 🥳\",
+                    \"image\": {
+                      \"url\": \"https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif\"
                     }
                   }
                 ]
-              }' \
+              }" \
           "${{ secrets.DISCORD_WEBHOOK_URL }}"

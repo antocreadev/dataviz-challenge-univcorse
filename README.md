@@ -1,5 +1,8 @@
 # Projet de Data Visualisation : Épisodes de Poussières Désertiques et Santé Respiratoire
 
+> Anthony Menghi
+> Mehdi Ghoulam
+
 ## Contexte
 Ce projet fait partie du Challenge Data Viz' 2024 proposé par la fondation Chaire Mutations et Innovations Territoriales de L'Université de Corse, qui vise à encourager l'exploration et la visualisation de données sur le thème des risques naturels. L'objectif de ce projet est de visualiser l'impact des épisodes de poussières désertiques en Corse et leur corrélation avec les hospitalisations liées aux maladies respiratoires.
 
